@@ -36,3 +36,4 @@
 2025-10-23T19:37:47  test: strengthen coverage
 2026-02-21T14:54:54  chore: tune defaults
 2026-03-27T09:11:01  chore: NULLBYTE nightly sweep
+2024-06-06T17:37:47  chore(docs): guard against ReDoS in patterns
