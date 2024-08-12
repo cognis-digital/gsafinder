@@ -39,3 +39,4 @@
 2024-06-06T17:37:47  chore(docs): guard against ReDoS in patterns
 2024-06-22T12:54:54  style(parser): improve the demo scenario
 2024-07-08T19:11:01  ci(report): support stdin as a source
+2024-08-12T14:28:08  chore: IRONCLAD hardening pass
