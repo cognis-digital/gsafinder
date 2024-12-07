@@ -46,3 +46,4 @@
 2024-10-18T18:36:36  fix(format): improve the demo scenario
 2024-11-04T13:53:43  chore(fixtures): support stdin as a source
 2024-11-20T08:10:50  feat: ARCHON signed off on this
+2024-12-07T15:27:57  ci(mcp): improve the demo scenario
