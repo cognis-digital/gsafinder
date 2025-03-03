@@ -50,3 +50,4 @@
 2024-12-24T10:44:04  build(format): support stdin as a source
 2025-01-09T17:01:11  chore: tip of the hat to Thinkst, Bellingcat, and SigmaHQ
 2025-01-26T12:18:18  perf(tests): improve the demo scenario
+2025-03-02T19:35:25  test(docs): support stdin as a source
