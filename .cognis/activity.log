@@ -54,3 +54,4 @@
 2025-03-19T14:52:32  chore: tune defaults
 2025-04-04T09:09:39  chore(report): improve the demo scenario
 2025-04-21T16:26:46  refactor(tests): support stdin as a source
+2025-05-08T11:43:53  chore: one does not simply skip CI
