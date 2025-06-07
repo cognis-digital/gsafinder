@@ -31,3 +31,4 @@
 2024-09-05T08:12:12  fix: handle empty input gracefully
 2024-10-08T15:29:19  perf: micro-optimization
 2025-02-06T10:46:26  style: formatting (we chose violence on tabs vs spaces)
+2025-06-07T17:03:33  chore: bump dev tooling
