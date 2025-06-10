@@ -56,3 +56,4 @@
 2025-04-21T16:26:46  refactor(tests): support stdin as a source
 2025-05-08T11:43:53  chore: one does not simply skip CI
 2025-05-24T18:00:00  build(parser): improve the demo scenario
+2025-06-10T13:17:07  fix(report): support stdin as a source
