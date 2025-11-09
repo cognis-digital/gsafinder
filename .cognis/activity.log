@@ -64,3 +64,4 @@
 2025-09-20T12:42:42  refactor(format): improve the demo scenario
 2025-10-06T19:59:49  ci(output): add pagination to large reports
 2025-10-22T14:16:56  style: formatting (we chose violence on tabs vs spaces)
+2025-11-09T09:33:03  fix(mcp): improve the demo scenario
