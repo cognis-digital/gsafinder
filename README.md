@@ -36,7 +36,11 @@ GSA Schedule opportunity surveyor — SAM.gov + eBuy + FedConnect — without st
 <a name="features"></a>
 ## Features
 
-- ✅ Scan
+- ✅ Days Until
+- ✅ Score Opportunity
+- ✅ Survey
+- ✅ Load Opportunities
+- ✅ Load Profile
 - ✅ Runs on Linux/macOS/Windows · Docker · devcontainer
 - ✅ Ports in Python, JavaScript, Go, and Rust (`ports/`)
 
