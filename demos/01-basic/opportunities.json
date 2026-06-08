@@ -1,0 +1,64 @@
+{
+  "opportunities": [
+    {
+      "notice_id": "GS-35F-26-CLOUD-0042",
+      "title": "Zero Trust Cloud Migration and Managed Hosting",
+      "agency": "GSA FAS",
+      "naics": "518210",
+      "set_aside": "SDVOSB",
+      "sins": ["54151S", "518210C"],
+      "response_due": "2026-06-13",
+      "posted": "2026-06-02",
+      "description": "Migration of legacy workloads to a zero trust cloud environment with cybersecurity monitoring.",
+      "source": "eBuy"
+    },
+    {
+      "notice_id": "W912-26-R-3301",
+      "title": "Enterprise Cybersecurity Operations Support",
+      "agency": "Department of the Army",
+      "naics": "541512",
+      "set_aside": "NONE",
+      "sins": ["54151S"],
+      "response_due": "2026-06-30",
+      "posted": "2026-06-01",
+      "description": "Full and open competition for cybersecurity operations and incident response.",
+      "source": "SAM"
+    },
+    {
+      "notice_id": "HHS-26-8A-0099",
+      "title": "Data Center Cloud Modernization",
+      "agency": "HHS",
+      "naics": "518210",
+      "set_aside": "8A",
+      "sins": ["518210C"],
+      "response_due": "2026-06-25",
+      "posted": "2026-06-03",
+      "description": "8(a) set-aside for cloud data center modernization services.",
+      "source": "FedConnect"
+    },
+    {
+      "notice_id": "GSA-26-JAN-7777",
+      "title": "Custodial and Janitorial Services",
+      "agency": "GSA PBS",
+      "naics": "561720",
+      "set_aside": "TOTAL_SB",
+      "sins": [],
+      "response_due": "2026-07-10",
+      "posted": "2026-06-04",
+      "description": "Routine custodial and janitorial services for a federal building.",
+      "source": "SAM"
+    },
+    {
+      "notice_id": "DOT-26-CLOSED-1188",
+      "title": "Cloud Advisory Services (closed)",
+      "agency": "DOT",
+      "naics": "541512",
+      "set_aside": "SDVOSB",
+      "sins": ["54151S"],
+      "response_due": "2026-05-30",
+      "posted": "2026-05-10",
+      "description": "Advisory services for cloud strategy. Submissions closed.",
+      "source": "eBuy"
+    }
+  ]
+}

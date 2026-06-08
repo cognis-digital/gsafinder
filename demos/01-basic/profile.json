@@ -1,0 +1,7 @@
+{
+  "name": "Acme Federal LLC",
+  "naics": ["518210", "541512"],
+  "sins": ["54151S"],
+  "set_asides": ["SDVOSB"],
+  "keywords": ["cloud", "cybersecurity", "zero trust", "migration"]
+}
