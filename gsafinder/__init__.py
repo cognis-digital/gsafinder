@@ -1,35 +1,11 @@
-"""GSAFINDER - GSA Schedule opportunity surveyor.
-
-Surveys federal solicitation records (SAM.gov, eBuy, FedConnect style)
-and scores them for fit against a vendor profile: matching NAICS codes,
-GSA Schedule / SIN alignment, set-aside eligibility, keyword relevance,
-and response-window urgency.
-
-Standard library only. Zero install.
-"""
-from .core import (
-    Opportunity,
-    VendorProfile,
-    ScoredOpportunity,
-    load_opportunities,
-    load_profile,
-    survey,
-    score_opportunity,
-    days_until,
-)
-
-TOOL_NAME = "gsafinder"
-TOOL_VERSION = "1.0.0"
-
-__all__ = [
-    "TOOL_NAME",
-    "TOOL_VERSION",
-    "Opportunity",
-    "VendorProfile",
-    "ScoredOpportunity",
-    "load_opportunities",
-    "load_profile",
-    "survey",
-    "score_opportunity",
-    "days_until",
-]
+"""gsafinder — part of the Cognis Neural Suite."""
+try:  # re-export the tool's public API + identity from core
+    from gsafinder.core import *  # noqa: F401,F403
+except Exception:  # pragma: no cover
+    pass
+try:
+    from gsafinder.core import TOOL_NAME, TOOL_VERSION
+except Exception:  # pragma: no cover
+    TOOL_NAME = "gsafinder"
+    TOOL_VERSION = "0.1.0"
+__version__ = TOOL_VERSION
