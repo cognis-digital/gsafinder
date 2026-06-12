@@ -16,7 +16,7 @@
 </div>
 
 ```bash
-pip install cognis-gsafinder
+pip install "git+https://github.com/cognis-digital/gsafinder.git"
 gsafinder scan .            # → prioritized findings in seconds
 ```
 
@@ -50,7 +50,7 @@ GSA Schedule opportunity surveyor — SAM.gov + eBuy + FedConnect — without st
 ## Quick start
 
 ```bash
-pip install cognis-gsafinder
+pip install "git+https://github.com/cognis-digital/gsafinder.git"
 gsafinder --version
 gsafinder scan .                       # scan current project
 gsafinder scan . --format json         # machine-readable
