@@ -20,6 +20,12 @@ pip install "git+https://github.com/cognis-digital/gsafinder.git"
 gsafinder scan .            # → prioritized findings in seconds
 ```
 
+<!-- cognis:layman:start -->
+## What is this?
+
+GSAFinder is a command-line tool that helps government contractors and small businesses find federal contract opportunities they are actually eligible to win. You give it a list of opportunities from sources like SAM.gov, eBuy, or FedConnect, along with a profile describing your company's certifications and capabilities, and it scores and ranks each opportunity based on how well it matches your business. The result is a prioritized table showing which contracts are the best fit, how many days you have left to respond, and why each one scored the way it did — so you spend time on the right bids instead of reading through hundreds of listings manually.
+<!-- cognis:layman:end -->
+
 ## Contents
 
 - [Why gsafinder?](#why) · [Features](#features) · [Quick start](#quick-start) · [Example](#example) · [Architecture](#architecture) · [AI stack](#ai-stack) · [How it compares](#how-it-compares) · [Integrations](#integrations) · [Install anywhere](#install-anywhere) · [Related](#related) · [Contributing](#contributing)
@@ -47,6 +53,42 @@ GSA Schedule opportunity surveyor — SAM.gov + eBuy + FedConnect — without st
 <div align="right"><a href="#top">↑ back to top</a></div>
 
 <a name="quick-start"></a>
+<!-- cognis:install:start -->
+## Install
+
+`gsafinder` is source-available (not published to PyPI) — every method below installs
+straight from GitHub. Pick whichever you prefer; the one-line scripts auto-detect
+the best tool available on your machine.
+
+**One-liner (Linux / macOS):**
+```sh
+curl -fsSL https://raw.githubusercontent.com/cognis-digital/gsafinder/HEAD/install.sh | sh
+```
+
+**One-liner (Windows PowerShell):**
+```powershell
+irm https://raw.githubusercontent.com/cognis-digital/gsafinder/HEAD/install.ps1 | iex
+```
+
+**Or install manually — any one of:**
+```sh
+pipx install "git+https://github.com/cognis-digital/gsafinder.git"     # isolated (recommended)
+uv tool install "git+https://github.com/cognis-digital/gsafinder.git"  # uv
+pip install "git+https://github.com/cognis-digital/gsafinder.git"      # pip
+```
+
+**From source:**
+```sh
+git clone https://github.com/cognis-digital/gsafinder.git
+cd gsafinder && pip install .
+```
+
+Then run:
+```sh
+gsafinder --help
+```
+<!-- cognis:install:end -->
+
 ## Quick start
 
 ```bash
