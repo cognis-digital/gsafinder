@@ -20,6 +20,34 @@ pip install cognis-gsafinder
 gsafinder scan .            # → prioritized findings in seconds
 ```
 
+
+## Usage — step by step
+
+1. Install (Python 3.9+):
+   ```bash
+   pip install gsafinder
+   ```
+2. Prepare two JSON inputs: an opportunities file (e.g. exported from
+   SAM.gov / eBuy / FedConnect) and a vendor `profile.json`. Score and rank
+   them:
+   ```bash
+   gsafinder survey opportunities.json --profile profile.json
+   ```
+3. Filter to bids worth chasing — only eligible notices, a minimum score, and
+   the top N:
+   ```bash
+   gsafinder survey opportunities.json -p profile.json --eligible-only \
+       --min-score 50 --top 20
+   ```
+4. Read the output: the table ranks rows by `SCORE` with `ELIG`, `DAYS` left,
+   `NOTICE_ID`, set-aside and title. For automation, use `--format json` and
+   read the `results[]` array (each with `score`, `eligible`, `days_left`).
+5. Pipe into other tooling / a daily watch:
+   ```bash
+   gsafinder survey opportunities.json -p profile.json --eligible-only \
+       --format json | jq '.results[] | select(.days_left <= 7)'
+   ```
+
 ## Contents
 
 - [Why gsafinder?](#why) · [Features](#features) · [Quick start](#quick-start) · [Example](#example) · [Architecture](#architecture) · [AI stack](#ai-stack) · [How it compares](#how-it-compares) · [Integrations](#integrations) · [Install anywhere](#install-anywhere) · [Related](#related) · [Contributing](#contributing)
