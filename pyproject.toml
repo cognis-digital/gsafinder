@@ -36,3 +36,6 @@ gsafinder = "gsafinder.cli:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["gsafinder"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
