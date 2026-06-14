@@ -83,6 +83,14 @@ def main(argv: Sequence[str] | None = None) -> int:
         parser.print_help()
         return 1
 
+    if args.top < 0:
+        print("error: --top must be a non-negative integer", file=sys.stderr)
+        return 2
+
+    if args.min_score < 0:
+        print("error: --min-score must be >= 0", file=sys.stderr)
+        return 2
+
     try:
         opportunities = load_opportunities(args.opportunities)
         profile = load_profile(args.profile)

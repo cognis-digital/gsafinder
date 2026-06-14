@@ -70,6 +70,10 @@ class Opportunity:
 
     @classmethod
     def from_dict(cls, d: dict[str, Any]) -> "Opportunity":
+        if not isinstance(d, dict):
+            raise ValueError(
+                f"opportunity record must be a JSON object, got {type(d).__name__!r}"
+            )
         if not d.get("notice_id"):
             raise ValueError("opportunity record missing 'notice_id'")
         if not d.get("title"):
@@ -77,17 +81,21 @@ class Opportunity:
         sins = d.get("sins") or []
         if isinstance(sins, str):
             sins = [s.strip() for s in sins.split(",") if s.strip()]
+        if not isinstance(sins, list):
+            raise ValueError(
+                f"opportunity {d.get('notice_id')!r}: 'sins' must be a list or comma-separated string"
+            )
         return cls(
             notice_id=str(d["notice_id"]),
             title=str(d["title"]),
-            agency=str(d.get("agency", "")),
-            naics=str(d.get("naics", "")),
-            set_aside=str(d.get("set_aside", "")),
+            agency=str(d.get("agency") or ""),
+            naics=str(d.get("naics") or ""),
+            set_aside=str(d.get("set_aside") or ""),
             sins=[str(s) for s in sins],
-            response_due=str(d.get("response_due", "")),
-            posted=str(d.get("posted", "")),
-            description=str(d.get("description", "")),
-            source=str(d.get("source", "")),
+            response_due=str(d.get("response_due") or ""),
+            posted=str(d.get("posted") or ""),
+            description=str(d.get("description") or ""),
+            source=str(d.get("source") or ""),
         )
 
 
@@ -101,12 +109,28 @@ class VendorProfile:
 
     @classmethod
     def from_dict(cls, d: dict[str, Any]) -> "VendorProfile":
+        if not isinstance(d, dict):
+            raise ValueError(
+                f"vendor profile must be a JSON object, got {type(d).__name__!r}"
+            )
+
+        def _to_str_list(key: str) -> list[str]:
+            val = d.get(key) or []
+            if isinstance(val, str):
+                # tolerate a bare comma-separated string
+                return [s.strip() for s in val.split(",") if s.strip()]
+            if not isinstance(val, list):
+                raise ValueError(
+                    f"profile field {key!r} must be a list, got {type(val).__name__!r}"
+                )
+            return [str(x) for x in val]
+
         return cls(
-            name=str(d.get("name", "vendor")),
-            naics=[str(x) for x in (d.get("naics") or [])],
-            sins=[str(x) for x in (d.get("sins") or [])],
-            set_asides=[str(x) for x in (d.get("set_asides") or [])],
-            keywords=[str(x) for x in (d.get("keywords") or [])],
+            name=str(d.get("name") or "vendor"),
+            naics=_to_str_list("naics"),
+            sins=_to_str_list("sins"),
+            set_asides=_to_str_list("set_asides"),
+            keywords=_to_str_list("keywords"),
         )
 
     def eligible_set_asides(self) -> set[str]:
@@ -274,7 +298,13 @@ def load_opportunities(path: str) -> list[Opportunity]:
         data = data.get("opportunities", data.get("results", []))
     if not isinstance(data, list):
         raise ValueError("opportunities file must be a JSON list or contain one")
-    return [Opportunity.from_dict(d) for d in data]
+    opps: list[Opportunity] = []
+    for i, item in enumerate(data):
+        try:
+            opps.append(Opportunity.from_dict(item))
+        except (ValueError, TypeError) as exc:
+            raise ValueError(f"opportunities[{i}]: {exc}") from exc
+    return opps
 
 
 def load_profile(path: str) -> VendorProfile:
