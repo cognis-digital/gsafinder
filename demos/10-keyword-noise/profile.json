@@ -1,0 +1,7 @@
+{
+  "name": "Apex AI Labs (SDVOSB)",
+  "naics": ["541512", "541715", "518210"],
+  "sins": ["54151S"],
+  "set_asides": ["SDVOSB"],
+  "keywords": ["AI", "ML", "natural language processing", "computer vision", "model"]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Meridian Defense Technologies (SDVOSB)",
+  "naics": ["541512", "541330", "518210", "541715"],
+  "sins": ["54151S", "54151HACS", "541330ENG"],
+  "set_asides": ["SDVOSB"],
+  "keywords": ["cybersecurity", "zero trust", "systems engineering", "cloud", "RMF", "incident response"]
+}

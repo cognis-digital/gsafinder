@@ -1,0 +1,7 @@
+{
+  "name": "Sentinel Cyber Partners (SDVOSB)",
+  "naics": ["541512", "541519", "518210"],
+  "sins": ["54151S", "54151HACS"],
+  "set_asides": ["SDVOSB"],
+  "keywords": ["penetration testing", "vulnerability assessment", "SOC", "threat hunting", "zero trust", "RMF", "incident response", "SIEM"]
+}

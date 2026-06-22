@@ -1,0 +1,52 @@
+{
+  "opportunities": [
+    {
+      "notice_id": "W912DR26R0024",
+      "title": "HUBZone Set-Aside: Facility Renovation Design-Build",
+      "agency": "U.S. Army Corps of Engineers",
+      "naics": "236220",
+      "set_aside": "HUBZONE",
+      "sins": [],
+      "response_due": "2026-07-28",
+      "posted": "2026-06-18",
+      "description": "HUBZone set-aside design-build renovation of an administrative facility including electrical and roofing work.",
+      "source": "SAM"
+    },
+    {
+      "notice_id": "36C25026R0301",
+      "title": "Total Small Business: Roofing Replacement",
+      "agency": "Department of Veterans Affairs",
+      "naics": "238160",
+      "set_aside": "TOTAL_SB",
+      "sins": [],
+      "response_due": "2026-07-30",
+      "posted": "2026-06-16",
+      "description": "Total small business set-aside for roofing replacement at a VA medical center.",
+      "source": "SAM"
+    },
+    {
+      "notice_id": "47PE0226R0008",
+      "title": "Electrical Systems Upgrade",
+      "agency": "GSA PBS",
+      "naics": "238210",
+      "set_aside": "NONE",
+      "sins": [],
+      "response_due": "2026-08-05",
+      "posted": "2026-06-17",
+      "description": "Full and open competition for electrical systems upgrade and facility modernization.",
+      "source": "FedConnect"
+    },
+    {
+      "notice_id": "GS00P26WOSB0061",
+      "title": "WOSB Set-Aside: Interior Painting",
+      "agency": "GSA PBS",
+      "naics": "238320",
+      "set_aside": "WOSB",
+      "sins": [],
+      "response_due": "2026-08-01",
+      "posted": "2026-06-15",
+      "description": "Women-owned small business set-aside for interior painting services.",
+      "source": "SAM"
+    }
+  ]
+}

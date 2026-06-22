@@ -1,0 +1,40 @@
+{
+  "opportunities": [
+    {
+      "notice_id": "47QTCA26R0160",
+      "title": "AI and ML Model Development Services",
+      "agency": "GSA FAS",
+      "naics": "541512",
+      "set_aside": "SDVOSB",
+      "sins": ["54151S"],
+      "response_due": "2026-07-14",
+      "posted": "2026-06-18",
+      "description": "SDVOSB set-aside to develop, train, and evaluate an AI model for document classification using natural language processing.",
+      "source": "eBuy"
+    },
+    {
+      "notice_id": "W912DY26R0050",
+      "title": "Grounds Maintenance and Facility Upkeep",
+      "agency": "Department of the Army",
+      "naics": "561730",
+      "set_aside": "SDVOSB",
+      "sins": [],
+      "response_due": "2026-07-20",
+      "posted": "2026-06-16",
+      "description": "Routine grounds maintenance. The contractor shall maintain landscaping and retain a remediation plan for the airfield.",
+      "source": "SAM"
+    },
+    {
+      "notice_id": "75N98026R00050",
+      "title": "Computer Vision for Medical Imaging Triage",
+      "agency": "HHS NIH",
+      "naics": "541715",
+      "set_aside": "NONE",
+      "sins": ["54151S"],
+      "response_due": "2026-07-26",
+      "posted": "2026-06-17",
+      "description": "Full and open research effort applying computer vision models to medical imaging triage.",
+      "source": "FedConnect"
+    }
+  ]
+}

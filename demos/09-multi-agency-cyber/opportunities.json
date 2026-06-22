@@ -1,0 +1,76 @@
+{
+  "opportunities": [
+    {
+      "notice_id": "HSHQDC26R00101",
+      "title": "Continuous Diagnostics and Mitigation SOC Support",
+      "agency": "DHS CISA",
+      "naics": "541512",
+      "set_aside": "SDVOSB",
+      "sins": ["54151S", "54151HACS"],
+      "response_due": "2026-07-13",
+      "posted": "2026-06-18",
+      "description": "SDVOSB set-aside for SOC operations, SIEM engineering, threat hunting, and incident response under the CDM program.",
+      "source": "eBuy"
+    },
+    {
+      "notice_id": "FA830726R0009",
+      "title": "Penetration Testing and Vulnerability Assessment",
+      "agency": "Department of the Air Force",
+      "naics": "541512",
+      "set_aside": "NONE",
+      "sins": ["54151HACS"],
+      "response_due": "2026-07-10",
+      "posted": "2026-06-17",
+      "description": "Full and open competition for penetration testing and vulnerability assessment of mission systems.",
+      "source": "SAM"
+    },
+    {
+      "notice_id": "36C10X26R0210",
+      "title": "RMF Authorization and Zero Trust Engineering",
+      "agency": "Department of Veterans Affairs",
+      "naics": "541519",
+      "set_aside": "SDVOSB",
+      "sins": ["54151S"],
+      "response_due": "2026-07-22",
+      "posted": "2026-06-16",
+      "description": "SDVOSB set-aside for RMF authorization packages and zero trust reference architecture engineering.",
+      "source": "FedConnect"
+    },
+    {
+      "notice_id": "GS35F26TSB0033",
+      "title": "Total Small Business: IT Asset Inventory",
+      "agency": "GSA FAS",
+      "naics": "541519",
+      "set_aside": "TOTAL_SB",
+      "sins": [],
+      "response_due": "2026-07-29",
+      "posted": "2026-06-15",
+      "description": "Total small business set-aside for hardware and software asset inventory and license reconciliation.",
+      "source": "SAM"
+    },
+    {
+      "notice_id": "N0001926R0077",
+      "title": "8(a) Set-Aside: Help Desk Tier 1",
+      "agency": "Department of the Navy",
+      "naics": "561110",
+      "set_aside": "8A",
+      "sins": [],
+      "response_due": "2026-08-03",
+      "posted": "2026-06-14",
+      "description": "8(a) set-aside for tier 1 service desk support.",
+      "source": "SAM"
+    },
+    {
+      "notice_id": "47QTCA26R0140",
+      "title": "Cloud Security Posture Management",
+      "agency": "GSA FAS",
+      "naics": "518210",
+      "set_aside": "SDVOSB",
+      "sins": ["54151HACS"],
+      "response_due": "2026-07-31",
+      "posted": "2026-06-17",
+      "description": "SDVOSB set-aside for cloud security posture management, configuration baselines, and continuous monitoring.",
+      "source": "eBuy"
+    }
+  ]
+}

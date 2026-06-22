@@ -1,0 +1,52 @@
+{
+  "opportunities": [
+    {
+      "notice_id": "47QTCA26R0180",
+      "title": "Cloud Help Desk and Managed Services (urgent)",
+      "agency": "GSA FAS",
+      "naics": "541512",
+      "set_aside": "TOTAL_SB",
+      "sins": ["54151S"],
+      "response_due": "2026-06-24",
+      "posted": "2026-06-10",
+      "description": "Total small business set-aside for cloud help desk and managed services support. Short turnaround.",
+      "source": "eBuy"
+    },
+    {
+      "notice_id": "W912QR26R0061",
+      "title": "Data Migration and Cloud Support",
+      "agency": "U.S. Army Corps of Engineers",
+      "naics": "518210",
+      "set_aside": "TOTAL_SB",
+      "sins": ["54151S"],
+      "response_due": "2026-07-03",
+      "posted": "2026-06-12",
+      "description": "Total small business set-aside for cloud data migration and ongoing support.",
+      "source": "SAM"
+    },
+    {
+      "notice_id": "36C24426R0400",
+      "title": "Managed Services Refresh",
+      "agency": "Department of Veterans Affairs",
+      "naics": "541512",
+      "set_aside": "TOTAL_SB",
+      "sins": ["54151S"],
+      "response_due": "2026-07-21",
+      "posted": "2026-06-15",
+      "description": "Total small business set-aside for a managed services refresh across regional offices.",
+      "source": "FedConnect"
+    },
+    {
+      "notice_id": "HSHQDC26R00120",
+      "title": "Cloud Migration Advisory (already closed)",
+      "agency": "DHS",
+      "naics": "518210",
+      "set_aside": "TOTAL_SB",
+      "sins": ["54151S"],
+      "response_due": "2026-06-12",
+      "posted": "2026-05-20",
+      "description": "Total small business set-aside cloud migration advisory. Submission window has passed.",
+      "source": "SAM"
+    }
+  ]
+}

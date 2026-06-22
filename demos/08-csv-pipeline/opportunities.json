@@ -1,0 +1,64 @@
+{
+  "opportunities": [
+    {
+      "notice_id": "FA877326R0014",
+      "title": "Zero Trust Architecture and RMF Engineering Support",
+      "agency": "Department of the Air Force",
+      "naics": "541512",
+      "set_aside": "SDVOSB",
+      "sins": ["54151S", "54151HACS"],
+      "response_due": "2026-07-11",
+      "posted": "2026-06-18",
+      "description": "SDVOSB set-aside for zero trust architecture, RMF authorization support, and incident response.",
+      "source": "eBuy"
+    },
+    {
+      "notice_id": "N0017826R0042",
+      "title": "Systems Engineering and Cloud Integration",
+      "agency": "Department of the Navy",
+      "naics": "541330",
+      "set_aside": "NONE",
+      "sins": ["541330ENG"],
+      "response_due": "2026-07-19",
+      "posted": "2026-06-16",
+      "description": "Full and open systems engineering and cloud integration for a tactical data platform.",
+      "source": "SAM"
+    },
+    {
+      "notice_id": "HSHQDC26R00088",
+      "title": "Cybersecurity Operations Center Support",
+      "agency": "DHS CISA",
+      "naics": "541512",
+      "set_aside": "TOTAL_SB",
+      "sins": ["54151S"],
+      "response_due": "2026-07-25",
+      "posted": "2026-06-15",
+      "description": "Total small business set-aside for 24x7 cybersecurity operations center staffing and incident response.",
+      "source": "SAM"
+    },
+    {
+      "notice_id": "47QTCA26R0120",
+      "title": "Scientific Research and Development Advisory",
+      "agency": "GSA FAS",
+      "naics": "541715",
+      "set_aside": "SDVOSB",
+      "sins": [],
+      "response_due": "2026-08-02",
+      "posted": "2026-06-17",
+      "description": "SDVOSB advisory for applied research and development program management.",
+      "source": "eBuy"
+    },
+    {
+      "notice_id": "W56HZV26R0205",
+      "title": "8(a) Set-Aside: Network Cabling",
+      "agency": "Department of the Army",
+      "naics": "238210",
+      "set_aside": "8A",
+      "sins": [],
+      "response_due": "2026-08-06",
+      "posted": "2026-06-14",
+      "description": "8(a) set-aside for structured network cabling installation.",
+      "source": "FedConnect"
+    }
+  ]
+}

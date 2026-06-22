@@ -1,0 +1,7 @@
+{
+  "name": "Harbor IT Services (Total SB)",
+  "naics": ["541512", "518210"],
+  "sins": ["54151S"],
+  "set_asides": ["TOTAL_SB"],
+  "keywords": ["help desk", "managed services", "cloud", "migration", "support"]
+}

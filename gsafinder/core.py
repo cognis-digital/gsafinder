@@ -27,11 +27,36 @@ A vendor profile looks like:
 """
 from __future__ import annotations
 
+import csv as _csv
 import datetime as _dt
+import io as _io
 import json
+import os as _os
 import re
 from dataclasses import dataclass, field, asdict
 from typing import Any, Iterable
+
+TOOL_NAME = "gsafinder"
+
+
+def _read_version() -> str:
+    """Resolve the tool version from the repo VERSION file, with a fallback."""
+    here = _os.path.dirname(_os.path.abspath(__file__))
+    for candidate in (
+        _os.path.join(here, "..", "VERSION"),
+        _os.path.join(here, "VERSION"),
+    ):
+        try:
+            with open(candidate, "r", encoding="utf-8") as fh:
+                v = fh.read().strip()
+            if v:
+                return v
+        except OSError:
+            continue
+    return "0.5.2"
+
+
+TOOL_VERSION = _read_version()
 
 # Set-aside types that a small business is generically eligible for when it
 # holds the corresponding socioeconomic certification. A profile listing one
@@ -264,6 +289,53 @@ def survey(
         reverse=True,
     )
     return results
+
+
+CSV_COLUMNS = [
+    "score",
+    "eligible",
+    "days_left",
+    "notice_id",
+    "agency",
+    "source",
+    "naics",
+    "set_aside",
+    "sins",
+    "response_due",
+    "title",
+    "reasons",
+]
+
+
+def to_csv(scored: Iterable[ScoredOpportunity]) -> str:
+    """Render scored opportunities as a CSV string.
+
+    Stable column order suitable for spreadsheets / capture-team triage and
+    importing into BI tools. List fields (sins, reasons) are pipe-joined so a
+    single CSV cell stays intact.
+    """
+    buf = _io.StringIO()
+    writer = _csv.writer(buf, lineterminator="\n")
+    writer.writerow(CSV_COLUMNS)
+    for s in scored:
+        d = s.to_dict()
+        writer.writerow(
+            [
+                f"{d['score']:.1f}",
+                "yes" if d["eligible"] else "no",
+                "" if d["days_left"] is None else d["days_left"],
+                d["notice_id"],
+                d["agency"],
+                d["source"],
+                d["naics"],
+                d["set_aside"],
+                " | ".join(d["sins"]),
+                d["response_due"],
+                d["title"],
+                " | ".join(d["reasons"]),
+            ]
+        )
+    return buf.getvalue()
 
 
 def load_opportunities(path: str) -> list[Opportunity]:

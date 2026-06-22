@@ -1,0 +1,52 @@
+{
+  "opportunities": [
+    {
+      "notice_id": "47QFCA26R0050",
+      "title": "8(a) Set-Aside: Data Analytics and Dashboard Modernization",
+      "agency": "GSA FAS",
+      "naics": "541511",
+      "set_aside": "8A",
+      "sins": ["54151S"],
+      "response_due": "2026-07-09",
+      "posted": "2026-06-18",
+      "description": "8(a) set-aside for data engineering, ETL pipelines, and analytics dashboard modernization.",
+      "source": "eBuy"
+    },
+    {
+      "notice_id": "HSHQDC26R00031",
+      "title": "Geospatial Machine Learning Services",
+      "agency": "DHS",
+      "naics": "541512",
+      "set_aside": "NONE",
+      "sins": ["54151S"],
+      "response_due": "2026-07-14",
+      "posted": "2026-06-16",
+      "description": "Full and open competition for geospatial machine learning model development and data engineering.",
+      "source": "SAM"
+    },
+    {
+      "notice_id": "GS35F26HUB0021",
+      "title": "HUBZone Set-Aside: IT Infrastructure Support",
+      "agency": "GSA PBS",
+      "naics": "518210",
+      "set_aside": "HUBZONE",
+      "sins": ["518210C"],
+      "response_due": "2026-07-18",
+      "posted": "2026-06-15",
+      "description": "HUBZone set-aside for IT infrastructure and managed hosting support.",
+      "source": "SAM"
+    },
+    {
+      "notice_id": "W91QVN26R0010",
+      "title": "Total Small Business: Records Digitization",
+      "agency": "Department of the Army",
+      "naics": "561439",
+      "set_aside": "TOTAL_SB",
+      "sins": [],
+      "response_due": "2026-07-21",
+      "posted": "2026-06-17",
+      "description": "Total small business set-aside for paper records scanning and digitization.",
+      "source": "FedConnect"
+    }
+  ]
+}

@@ -17,7 +17,7 @@
 
 ```bash
 pip install cognis-gsafinder
-gsafinder scan .            # → prioritized findings in seconds
+gsafinder survey opportunities.json -p profile.json   # → ranked bids in seconds
 ```
 
 
@@ -42,7 +42,15 @@ gsafinder scan .            # → prioritized findings in seconds
 4. Read the output: the table ranks rows by `SCORE` with `ELIG`, `DAYS` left,
    `NOTICE_ID`, set-aside and title. For automation, use `--format json` and
    read the `results[]` array (each with `score`, `eligible`, `days_left`).
-5. Pipe into other tooling / a daily watch:
+5. Export for a capture-team spreadsheet with `--format csv`:
+   ```bash
+   gsafinder survey opportunities.json -p profile.json --eligible-only \
+       --min-score 40 --format csv > pipeline.csv
+   ```
+   Columns: `score, eligible, days_left, notice_id, agency, source, naics,
+   set_aside, sins, response_due, title, reasons` (list fields pipe-joined so
+   each value stays in one cell).
+6. Pipe into other tooling / a daily watch:
    ```bash
    gsafinder survey opportunities.json -p profile.json --eligible-only \
        --format json | jq '.results[] | select(.days_left <= 7)'
@@ -50,7 +58,7 @@ gsafinder scan .            # → prioritized findings in seconds
 
 ## Contents
 
-- [Why gsafinder?](#why) · [Features](#features) · [Quick start](#quick-start) · [Example](#example) · [Architecture](#architecture) · [AI stack](#ai-stack) · [How it compares](#how-it-compares) · [Integrations](#integrations) · [Install anywhere](#install-anywhere) · [Related](#related) · [Contributing](#contributing)
+- [Why gsafinder?](#why) · [Features](#features) · [Quick start](#quick-start) · [Example](#example) · [Demos](#demos) · [Architecture](#architecture) · [AI stack](#ai-stack) · [How it compares](#how-it-compares) · [Integrations](#integrations) · [Install anywhere](#install-anywhere) · [Related](#related) · [Contributing](#contributing)
 
 <a name="why"></a>
 ## Why gsafinder?
@@ -64,11 +72,13 @@ GSA Schedule opportunity surveyor — SAM.gov + eBuy + FedConnect — without st
 <a name="features"></a>
 ## Features
 
-- ✅ Days Until
-- ✅ Score Opportunity
-- ✅ Survey
-- ✅ Load Opportunities
-- ✅ Load Profile
+- ✅ Set-aside eligibility gate (SDVOSB / WOSB / EDWOSB / 8(a) / HUBZone / Total SB ladder)
+- ✅ NAICS + GSA Schedule SIN matching
+- ✅ Whole-word keyword relevance (no "AI" inside "maintain" false positives)
+- ✅ Deadline urgency bonus + closed-notice penalty
+- ✅ Output as table, JSON, **or CSV** for spreadsheets/BI
+- ✅ `--eligible-only`, `--min-score`, `--top N` filters for focused bid lists
+- ✅ Nine runnable real-format demos in [`demos/`](demos/)
 - ✅ Runs on Linux/macOS/Windows · Docker · devcontainer
 - ✅ Ports in Python, JavaScript, Go, and Rust (`ports/`)
 
@@ -80,9 +90,11 @@ GSA Schedule opportunity surveyor — SAM.gov + eBuy + FedConnect — without st
 ```bash
 pip install cognis-gsafinder
 gsafinder --version
-gsafinder scan .                       # scan current project
-gsafinder scan . --format json         # machine-readable
-gsafinder scan . --fail-on high        # CI gate (non-zero exit)
+gsafinder survey opportunities.json -p profile.json                 # ranked table
+gsafinder survey opportunities.json -p profile.json --format json   # machine-readable
+gsafinder survey opportunities.json -p profile.json --format csv    # spreadsheet
+gsafinder survey opportunities.json -p profile.json \
+    --eligible-only --min-score 50 --top 20                         # focused bid list
 ```
 
 <div align="right"><a href="#top">↑ back to top</a></div>
@@ -91,12 +103,36 @@ gsafinder scan . --fail-on high        # CI gate (non-zero exit)
 ## Example
 
 ```text
-$ gsafinder scan .
-  [HIGH    ] GSA-001  example finding             (./src/app.py)
-  [MEDIUM  ] GSA-002  another signal              (./config.yaml)
-
-  2 findings · risk score 5 · 38ms
+$ gsafinder survey demos/01-basic/opportunities.json -p demos/01-basic/profile.json
+SCORE  ELIG  DAYS  NOTICE_ID              SET-ASIDE  TITLE
+-----  ----  ----  ---------------------  ---------  ---------------------------------------
+60.5   yes   9     W912-26-R-3301         NONE       Enterprise Cybersecurity Operations Support
+57.5   yes   -8    GS-35F-26-CLOUD-0042   SDVOSB     Zero Trust Cloud Migration and Managed Hosting
+15.0   yes   19    GSA-26-JAN-7777        TOTAL_SB   Custodial and Janitorial Services
+0.0    no    4     HHS-26-8A-0099         8A         Data Center Cloud Modernization (INELIGIBLE)
 ```
+
+<div align="right"><a href="#top">↑ back to top</a></div>
+
+<a name="demos"></a>
+## Demos
+
+Nine runnable, real-format scenarios live under [`demos/`](demos/) — each has a
+`SCENARIO.md`, an `opportunities.json`, and a `profile.json` in the tool's real
+input format. Run any of them straight from a clone (`python -m gsafinder
+survey demos/<name>/opportunities.json -p demos/<name>/profile.json`):
+
+| Demo | What it shows |
+|---|---|
+| [`01-basic`](demos/01-basic) | First survey: NAICS/SIN/keyword scoring, eligibility gate, closed notice |
+| [`04-full-and-open-it`](demos/04-full-and-open-it) | Vendor with **no certs** — set-aside notices flagged ineligible |
+| [`05-wosb-staffing`](demos/05-wosb-staffing) | **EDWOSB** ladder — covers WOSB/Total SB, not SDVOSB |
+| [`06-8a-graduate`](demos/06-8a-graduate) | **8(a)** analytics firm — HUBZone notice is the gap |
+| [`07-hubzone-construction`](demos/07-hubzone-construction) | **HUBZone** trades vendor with **no SINs** (NAICS+keyword only) |
+| [`08-csv-pipeline`](demos/08-csv-pipeline) | `--format csv` export for a capture-team spreadsheet |
+| [`09-multi-agency-cyber`](demos/09-multi-agency-cyber) | Larger batch across 5 agencies, `--top` triage |
+| [`10-keyword-noise`](demos/10-keyword-noise) | Whole-word matching: "AI"/"ML" don't match "maintain" |
+| [`11-deadline-triage`](demos/11-deadline-triage) | Urgency bonus + closed-notice penalty for daily watch |
 
 <div align="right"><a href="#top">↑ back to top</a></div>
 
@@ -117,7 +153,7 @@ flowchart LR
 `gsafinder` is interoperable with every popular way of using AI:
 
 - **MCP server** — `gsafinder mcp` (Claude Desktop, Cursor, Cognis.Studio, [uncensored-fleet](https://github.com/cognis-digital/uncensored-fleet))
-- **OpenAI-compatible / JSON** — pipe `gsafinder scan . --format json` into any agent or LLM
+- **OpenAI-compatible / JSON** — pipe `gsafinder survey opportunities.json -p profile.json --format json` into any agent or LLM
 - **LangChain · CrewAI · AutoGen · LlamaIndex** — wrap the CLI/JSON as a tool in one line
 - **CI / scripts** — exit codes + SARIF for non-AI pipelines
 

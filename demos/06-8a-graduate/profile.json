@@ -1,0 +1,7 @@
+{
+  "name": "Cascade Analytics Group",
+  "naics": ["541511", "541512", "518210", "541690"],
+  "sins": ["54151S", "518210C"],
+  "set_asides": ["8A"],
+  "keywords": ["data analytics", "machine learning", "data engineering", "ETL", "dashboard", "geospatial"]
+}

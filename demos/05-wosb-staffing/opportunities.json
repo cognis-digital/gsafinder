@@ -1,0 +1,52 @@
+{
+  "opportunities": [
+    {
+      "notice_id": "36C24426R0142",
+      "title": "EDWOSB Set-Aside: Temporary Administrative Staffing",
+      "agency": "Department of Veterans Affairs",
+      "naics": "561320",
+      "set_aside": "EDWOSB",
+      "sins": ["561320"],
+      "response_due": "2026-07-10",
+      "posted": "2026-06-18",
+      "description": "Economically disadvantaged women-owned small business set-aside for temporary administrative and clerical staffing support.",
+      "source": "eBuy"
+    },
+    {
+      "notice_id": "GS02Q26WOSB0044",
+      "title": "WOSB Set-Aside: Recruiting and Human Capital Services",
+      "agency": "GSA FAS",
+      "naics": "541612",
+      "set_aside": "WOSB",
+      "sins": ["541612"],
+      "response_due": "2026-07-16",
+      "posted": "2026-06-17",
+      "description": "Women-owned small business set-aside for recruiting and human capital consulting.",
+      "source": "SAM"
+    },
+    {
+      "notice_id": "SP470026R8801",
+      "title": "SDVOSB Set-Aside: Logistics Staffing",
+      "agency": "DLA",
+      "naics": "561320",
+      "set_aside": "SDVOSB",
+      "sins": ["561320"],
+      "response_due": "2026-07-22",
+      "posted": "2026-06-15",
+      "description": "Service-disabled veteran-owned small business set-aside for logistics staffing.",
+      "source": "SAM"
+    },
+    {
+      "notice_id": "47QRAA26R0203",
+      "title": "Total Small Business: Office Administrative Support",
+      "agency": "GSA PBS",
+      "naics": "561110",
+      "set_aside": "TOTAL_SB",
+      "sins": [],
+      "response_due": "2026-07-25",
+      "posted": "2026-06-16",
+      "description": "Total small business set-aside for general office and administrative support services.",
+      "source": "FedConnect"
+    }
+  ]
+}

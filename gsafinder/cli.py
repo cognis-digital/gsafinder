@@ -7,7 +7,7 @@ import sys
 from typing import Sequence
 
 from . import TOOL_NAME, TOOL_VERSION
-from .core import load_opportunities, load_profile, survey
+from .core import load_opportunities, load_profile, survey, to_csv
 
 
 def _format_table(rows: list[dict]) -> str:
@@ -68,7 +68,7 @@ def _build_parser() -> argparse.ArgumentParser:
     survey_p.add_argument("--top", type=int, default=0, help="limit to top N results")
     survey_p.add_argument(
         "--format",
-        choices=["table", "json"],
+        choices=["table", "json", "csv"],
         default="table",
         help="output format (default: table)",
     )
@@ -111,6 +111,8 @@ def main(argv: Sequence[str] | None = None) -> int:
                 indent=2,
             )
         )
+    elif args.format == "csv":
+        print(to_csv(results), end="")
     else:
         print(_format_table(rows))
 

@@ -1,0 +1,52 @@
+{
+  "opportunities": [
+    {
+      "notice_id": "47QTCA26R0011",
+      "title": "Agile Software Development and DevSecOps Support",
+      "agency": "GSA FAS",
+      "naics": "541512",
+      "set_aside": "NONE",
+      "sins": ["54151S"],
+      "response_due": "2026-07-15",
+      "posted": "2026-06-18",
+      "description": "Full and open competition for agile software development, DevSecOps pipeline engineering, and cloud-native application modernization.",
+      "source": "eBuy"
+    },
+    {
+      "notice_id": "75N98026R00024",
+      "title": "Health Data Platform Migration Services",
+      "agency": "HHS NIH",
+      "naics": "518210",
+      "set_aside": "NONE",
+      "sins": ["518210C"],
+      "response_due": "2026-07-08",
+      "posted": "2026-06-16",
+      "description": "Unrestricted requirement for cloud data migration of legacy research datasets to a managed platform.",
+      "source": "SAM"
+    },
+    {
+      "notice_id": "W52P1J26R0099",
+      "title": "Total Small Business Set-Aside: IT Help Desk Staffing",
+      "agency": "Department of the Army",
+      "naics": "561110",
+      "set_aside": "TOTAL_SB",
+      "sins": [],
+      "response_due": "2026-07-20",
+      "posted": "2026-06-15",
+      "description": "Tier 1 help desk staffing. Total small business set-aside.",
+      "source": "SAM"
+    },
+    {
+      "notice_id": "GS00Q26WOSB0007",
+      "title": "WOSB Set-Aside: Graphics and Web Design",
+      "agency": "GSA PBS",
+      "naics": "541430",
+      "set_aside": "WOSB",
+      "sins": [],
+      "response_due": "2026-07-12",
+      "posted": "2026-06-17",
+      "description": "Women-owned small business set-aside for graphic and web design services.",
+      "source": "eBuy"
+    }
+  ]
+}
