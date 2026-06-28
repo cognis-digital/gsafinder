@@ -1,0 +1,13 @@
+$ gsafinder-emit --help
+
+usage: gsafinder [-h] [--version] {survey} ...
+
+GSA Schedule opportunity surveyor (SAM.gov / eBuy / FedConnect).
+
+positional arguments:
+  {survey}
+    survey    score and rank opportunities against a vendor profile
+
+options:
+  -h, --help  show this help message and exit
+  --version   show program's version number and exit

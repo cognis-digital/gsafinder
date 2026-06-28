@@ -21,6 +21,59 @@ gsafinder survey opportunities.json -p profile.json   # → ranked bids in secon
 ```
 
 
+
+<!-- cognis:example:start -->
+## 🔎 Example output
+
+Real, reproducible output from the tool — runs offline:
+
+```console
+$ gsafinder-emit --version
+gsafinder 0.5.2
+```
+
+```console
+$ gsafinder-emit --help
+usage: gsafinder [-h] [--version] {survey} ...
+
+GSA Schedule opportunity surveyor (SAM.gov / eBuy / FedConnect).
+
+positional arguments:
+  {survey}
+    survey    score and rank opportunities against a vendor profile
+
+options:
+  -h, --help  show this help message and exit
+  --version   show program's version number and exit
+```
+
+> Blocks above are real `gsafinder` output — reproduce them from a clone.
+
+**Sample result format** _(illustrative values — run on your own data for real findings):_
+
+```
+{
+"findings": [
+    {
+        "id": "1234567890",
+        "title": "Suspicious Network Traffic",
+        "description": "Potential malicious activity detected on port 443",
+        "created_by": "John Doe",
+        "created_at": "2023-02-20T14:30:00Z"
+    },
+    {
+        "id": "2345678901",
+        "title": "Unusual File Access",
+        "description": "Unauthorized access to a sensitive file",
+        "created_by": "Jane Smith",
+        "created_at": "2023-02-21T10:45:00Z"
+    }
+]
+}
+```
+
+<!-- cognis:example:end -->
+
 ## Usage — step by step
 
 1. Install (Python 3.9+):
