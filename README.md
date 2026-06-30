@@ -170,10 +170,27 @@ SCORE  ELIG  DAYS  NOTICE_ID              SET-ASIDE  TITLE
 <a name="demos"></a>
 ## Demos
 
-Nine runnable, real-format scenarios live under [`demos/`](demos/) — each has a
-`SCENARIO.md`, an `opportunities.json`, and a `profile.json` in the tool's real
-input format. Run any of them straight from a clone (`python -m gsafinder
-survey demos/<name>/opportunities.json -p demos/<name>/profile.json`):
+**Narrated, audience-targeted Python scenarios.** Five runnable scenarios drive
+the real `gsafinder` API against the bundled fixtures (offline — no SAM.gov /
+eBuy calls), print narrated output, and exit 0. See [`docs/DEMOS.md`](docs/DEMOS.md).
+
+```bash
+PYTHONUTF8=1 python demos/run_all.py            # all five, end to end
+PYTHONUTF8=1 python demos/03_bd_pipeline_export.py   # or just one
+```
+
+| Scenario | Audience | What it shows |
+|---|---|---|
+| [`01_capture_manager_triage`](demos/01_capture_manager_triage.py) | GovCon capture managers | Rank the morning's pull, surface the top lead's rationale, flag the no-bids |
+| [`02_small_biz_eligibility`](demos/02_small_biz_eligibility.py) | Small-biz federal sellers | The set-aside ladder across three vendors — where EDWOSB/8(a)/HUBZone certs open or close the door |
+| [`03_bd_pipeline_export`](demos/03_bd_pipeline_export.py) | BD teams | A 5-agency cyber batch filtered to eligible high-score leads, rendered as the real `to_csv` export |
+| [`04_proposal_deadline_watch`](demos/04_proposal_deadline_watch.py) | Proposal teams | Sort the day's work into respond-now / on-the-radar / too-late from the urgency + closed-notice scoring |
+| [`05_keyword_precision`](demos/05_keyword_precision.py) | Capture analysts | Whole-word matching — "AI"/"ML" hit real notices but never the "maintain" noise |
+
+**Real-format fixture demos.** Nine fixture directories under [`demos/`](demos/)
+— each has a `SCENARIO.md`, an `opportunities.json`, and a `profile.json` in the
+tool's real input format. Run any of them straight from a clone (`python -m
+gsafinder survey demos/<name>/opportunities.json -p demos/<name>/profile.json`):
 
 | Demo | What it shows |
 |---|---|
