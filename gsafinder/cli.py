@@ -86,11 +86,13 @@ def main(argv: Sequence[str] | None = None) -> int:
     try:
         opportunities = load_opportunities(args.opportunities)
         profile = load_profile(args.profile)
+    except json.JSONDecodeError as exc:
+        # JSONDecodeError subclasses ValueError, so it must be caught first or
+        # the clearer "invalid JSON" message below is never reached.
+        print(f"error: invalid JSON: {exc}", file=sys.stderr)
+        return 2
     except (OSError, ValueError) as exc:
         print(f"error: {exc}", file=sys.stderr)
-        return 2
-    except json.JSONDecodeError as exc:
-        print(f"error: invalid JSON: {exc}", file=sys.stderr)
         return 2
 
     results = survey(

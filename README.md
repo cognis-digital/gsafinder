@@ -140,7 +140,7 @@ GSA Schedule opportunity surveyor — SAM.gov + eBuy + FedConnect — without st
 - ✅ Deadline urgency bonus + closed-notice penalty
 - ✅ Output as table, JSON, **or CSV** for spreadsheets/BI
 - ✅ `--eligible-only`, `--min-score`, `--top N` filters for focused bid lists
-- ✅ Nine runnable real-format demos in [`demos/`](demos/)
+- ✅ 20 narrated scenarios + 13 real-format demos in [`demos/`](demos/)
 - ✅ Runs on Linux/macOS/Windows · Docker · devcontainer
 - ✅ Ports in Python, JavaScript, Go, and Rust (`ports/`)
 
@@ -179,24 +179,40 @@ SCORE  ELIG  DAYS  NOTICE_ID              SET-ASIDE  TITLE
 <a name="demos"></a>
 ## Demos
 
-**Narrated, audience-targeted Python scenarios.** Five runnable scenarios drive
-the real `gsafinder` API against the bundled fixtures (offline — no SAM.gov /
-eBuy calls), print narrated output, and exit 0. See [`docs/DEMOS.md`](docs/DEMOS.md).
+**Narrated, audience-targeted Python scenarios.** 20 runnable scenarios drive
+the real `gsafinder` API (and CLI) against the bundled fixtures (offline — no
+SAM.gov / eBuy calls), print narrated output, and exit 0. Full table in
+[`docs/DEMOS.md`](docs/DEMOS.md).
 
 ```bash
-PYTHONUTF8=1 python demos/run_all.py            # all five, end to end
+PYTHONUTF8=1 python demos/run_all.py            # all twenty, end to end
 PYTHONUTF8=1 python demos/03_bd_pipeline_export.py   # or just one
 ```
 
-| Scenario | Audience | What it shows |
+| Scenario | Audience / focus | What it shows |
 |---|---|---|
-| [`01_capture_manager_triage`](demos/01_capture_manager_triage.py) | GovCon capture managers | Rank the morning's pull, surface the top lead's rationale, flag the no-bids |
-| [`02_small_biz_eligibility`](demos/02_small_biz_eligibility.py) | Small-biz federal sellers | The set-aside ladder across three vendors — where EDWOSB/8(a)/HUBZone certs open or close the door |
-| [`03_bd_pipeline_export`](demos/03_bd_pipeline_export.py) | BD teams | A 5-agency cyber batch filtered to eligible high-score leads, rendered as the real `to_csv` export |
-| [`04_proposal_deadline_watch`](demos/04_proposal_deadline_watch.py) | Proposal teams | Sort the day's work into respond-now / on-the-radar / too-late from the urgency + closed-notice scoring |
-| [`05_keyword_precision`](demos/05_keyword_precision.py) | Capture analysts | Whole-word matching — "AI"/"ML" hit real notices but never the "maintain" noise |
+| [`01_capture_manager_triage`](demos/01_capture_manager_triage.py) | Capture managers | Rank the morning's pull, surface the top lead's rationale, flag the no-bids |
+| [`02_small_biz_eligibility`](demos/02_small_biz_eligibility.py) | Small-biz sellers | The set-aside ladder across three vendors (EDWOSB/8(a)/HUBZone) |
+| [`03_bd_pipeline_export`](demos/03_bd_pipeline_export.py) | BD teams | A 5-agency batch filtered to high-score leads, rendered as `to_csv` |
+| [`04_proposal_deadline_watch`](demos/04_proposal_deadline_watch.py) | Proposal teams | Respond-now / on-the-radar / too-late from urgency + closed scoring |
+| [`05_keyword_precision`](demos/05_keyword_precision.py) | Capture analysts | Whole-word matching — "AI"/"ML" hit real notices, never "maintain" |
+| [`06_no_bid_walkaway`](demos/06_no_bid_walkaway.py) | Discipline | The eligibility gate returning an empty set — the honest no-bid day |
+| [`07_deadline_tie_break`](demos/07_deadline_tie_break.py) | Ranking contract | Equal-fit leads broken by the nearer deadline |
+| [`08_sin_overlap_cap`](demos/08_sin_overlap_cap.py) | Scoring internals | SIN overlap rewarded but bounded by the cap |
+| [`09_messy_date_feeds`](demos/09_messy_date_feeds.py) | Ingest robustness | Mixed date formats parsed; bad/blank degrade to null, never crash |
+| [`10_cli_json_output`](demos/10_cli_json_output.py) | Integrators | The stable `{vendor, count, results}` JSON envelope |
+| [`11_cli_csv_pipeline`](demos/11_cli_csv_pipeline.py) | BD analysts | `--format csv` round-tripping through `csv.DictReader` |
+| [`12_top_n_shortlist`](demos/12_top_n_shortlist.py) | Capture leads | `--top N` = the head of the full ranking |
+| [`13_score_floor_filter`](demos/13_score_floor_filter.py) | Noise control | `--min-score` shrinking the set monotonically |
+| [`14_set_aside_ladder_walk`](demos/14_set_aside_ladder_walk.py) | Eligibility | Every certification's expanded eligibility set |
+| [`15_closed_notice_penalty`](demos/15_closed_notice_penalty.py) | Proposal teams | Closed notices penalized below live leads |
+| [`16_urgency_buckets`](demos/16_urgency_buckets.py) | Deadline model | The <=7d / 8-14d / runway tiers |
+| [`17_multi_agency_spread`](demos/17_multi_agency_spread.py) | BD strategy | One profile's addressable footprint across agencies |
+| [`18_table_render`](demos/18_table_render.py) | CLI users | The default human-readable table |
+| [`19_cli_exit_codes`](demos/19_cli_exit_codes.py) | Automation | The 0 / 1 / 2 exit-code contract |
+| [`20_malformed_input_handling`](demos/20_malformed_input_handling.py) | Robustness | Clear errors + exit 2 on bad input, never a stack trace |
 
-**Real-format fixture demos.** Nine fixture directories under [`demos/`](demos/)
+**Real-format fixture demos.** Thirteen fixture directories under [`demos/`](demos/)
 — each has a `SCENARIO.md`, an `opportunities.json`, and a `profile.json` in the
 tool's real input format. Run any of them straight from a clone (`python -m
 gsafinder survey demos/<name>/opportunities.json -p demos/<name>/profile.json`):
@@ -212,6 +228,10 @@ gsafinder survey demos/<name>/opportunities.json -p demos/<name>/profile.json`):
 | [`09-multi-agency-cyber`](demos/09-multi-agency-cyber) | Larger batch across 5 agencies, `--top` triage |
 | [`10-keyword-noise`](demos/10-keyword-noise) | Whole-word matching: "AI"/"ML" don't match "maintain" |
 | [`11-deadline-triage`](demos/11-deadline-triage) | Urgency bonus + closed-notice penalty for daily watch |
+| [`12-all-ineligible`](demos/12-all-ineligible) | HUBZone-only vendor — every notice is a no-bid (empty eligible set) |
+| [`13-tie-break`](demos/13-tie-break) | Equal-score leads ordered by the nearer deadline |
+| [`14-sin-overlap`](demos/14-sin-overlap) | SIN overlap scoring and its +25 cap |
+| [`17-date-formats`](demos/17-date-formats) | Mixed/blank deadline formats parsed or degraded safely |
 
 <div align="right"><a href="#top">↑ back to top</a></div>
 

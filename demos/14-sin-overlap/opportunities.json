@@ -1,0 +1,40 @@
+{
+  "opportunities": [
+    {
+      "notice_id": "SIN-MANY-0001",
+      "title": "Multi-SIN Systems Integration BPA",
+      "agency": "GSA FAS",
+      "naics": "541512",
+      "set_aside": "NONE",
+      "sins": ["54151S", "54151HACS", "541330ENG"],
+      "response_due": "2026-08-01",
+      "posted": "2026-06-10",
+      "description": "Blanket purchase agreement spanning multiple schedule SINs.",
+      "source": "eBuy"
+    },
+    {
+      "notice_id": "SIN-ONE-0002",
+      "title": "Single-SIN Cloud Task Order",
+      "agency": "GSA FAS",
+      "naics": "541512",
+      "set_aside": "NONE",
+      "sins": ["54151S"],
+      "response_due": "2026-08-01",
+      "posted": "2026-06-10",
+      "description": "Task order referencing one schedule SIN.",
+      "source": "eBuy"
+    },
+    {
+      "notice_id": "SIN-NONE-0003",
+      "title": "No-SIN Advisory Task",
+      "agency": "GSA FAS",
+      "naics": "541512",
+      "set_aside": "NONE",
+      "sins": ["99999Z"],
+      "response_due": "2026-08-01",
+      "posted": "2026-06-10",
+      "description": "Advisory task referencing an unrelated SIN.",
+      "source": "eBuy"
+    }
+  ]
+}

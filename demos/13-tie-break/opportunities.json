@@ -1,0 +1,28 @@
+{
+  "opportunities": [
+    {
+      "notice_id": "TIE-LATE-0002",
+      "title": "Cloud Hosting Environment B",
+      "agency": "GSA FAS",
+      "naics": "518210",
+      "set_aside": "NONE",
+      "sins": [],
+      "response_due": "2026-08-15",
+      "posted": "2026-06-10",
+      "description": "General purpose cloud hosting, later deadline.",
+      "source": "SAM"
+    },
+    {
+      "notice_id": "TIE-SOON-0001",
+      "title": "Cloud Hosting Environment A",
+      "agency": "GSA FAS",
+      "naics": "518210",
+      "set_aside": "NONE",
+      "sins": [],
+      "response_due": "2026-07-20",
+      "posted": "2026-06-10",
+      "description": "General purpose cloud hosting, earlier deadline.",
+      "source": "SAM"
+    }
+  ]
+}

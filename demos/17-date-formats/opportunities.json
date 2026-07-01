@@ -1,0 +1,64 @@
+{
+  "opportunities": [
+    {
+      "notice_id": "DATE-ISO-0001",
+      "title": "ISO Date Support Task",
+      "agency": "GSA",
+      "naics": "541512",
+      "set_aside": "TOTAL_SB",
+      "sins": ["54151S"],
+      "response_due": "2026-06-27",
+      "posted": "2026-06-10",
+      "description": "Response due given in ISO YYYY-MM-DD form.",
+      "source": "SAM"
+    },
+    {
+      "notice_id": "DATE-US-0002",
+      "title": "US-Format Date Support Task",
+      "agency": "GSA",
+      "naics": "541512",
+      "set_aside": "TOTAL_SB",
+      "sins": ["54151S"],
+      "response_due": "07/05/2026",
+      "posted": "2026-06-10",
+      "description": "Response due given in US MM/DD/YYYY form.",
+      "source": "SAM"
+    },
+    {
+      "notice_id": "DATE-SLASH-0003",
+      "title": "Slash-ISO Date Support Task",
+      "agency": "GSA",
+      "naics": "541512",
+      "set_aside": "TOTAL_SB",
+      "sins": ["54151S"],
+      "response_due": "2026/07/18",
+      "posted": "2026-06-10",
+      "description": "Response due given in YYYY/MM/DD form.",
+      "source": "SAM"
+    },
+    {
+      "notice_id": "DATE-BAD-0004",
+      "title": "Unparseable Date Support Task",
+      "agency": "GSA",
+      "naics": "541512",
+      "set_aside": "TOTAL_SB",
+      "sins": ["54151S"],
+      "response_due": "TBD - see amendment",
+      "posted": "2026-06-10",
+      "description": "Response due is free text and cannot be parsed.",
+      "source": "SAM"
+    },
+    {
+      "notice_id": "DATE-MISSING-0005",
+      "title": "Missing Date Support Task",
+      "agency": "GSA",
+      "naics": "541512",
+      "set_aside": "TOTAL_SB",
+      "sins": ["54151S"],
+      "response_due": "",
+      "posted": "2026-06-10",
+      "description": "No response due date supplied at all.",
+      "source": "SAM"
+    }
+  ]
+}
