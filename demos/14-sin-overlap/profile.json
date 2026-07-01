@@ -1,0 +1,7 @@
+{
+  "name": "Ironclad Multi-Schedule Integrators (SDVOSB)",
+  "naics": ["541512"],
+  "sins": ["54151S", "54151HACS", "541330ENG", "518210C"],
+  "set_asides": ["SDVOSB"],
+  "keywords": []
+}

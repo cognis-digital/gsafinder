@@ -21,6 +21,21 @@ SCENARIOS = [
     "03_bd_pipeline_export",
     "04_proposal_deadline_watch",
     "05_keyword_precision",
+    "06_no_bid_walkaway",
+    "07_deadline_tie_break",
+    "08_sin_overlap_cap",
+    "09_messy_date_feeds",
+    "10_cli_json_output",
+    "11_cli_csv_pipeline",
+    "12_top_n_shortlist",
+    "13_score_floor_filter",
+    "14_set_aside_ladder_walk",
+    "15_closed_notice_penalty",
+    "16_urgency_buckets",
+    "17_multi_agency_spread",
+    "18_table_render",
+    "19_cli_exit_codes",
+    "20_malformed_input_handling",
 ]
 
 

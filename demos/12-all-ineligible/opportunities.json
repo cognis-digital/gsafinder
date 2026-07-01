@@ -1,0 +1,40 @@
+{
+  "opportunities": [
+    {
+      "notice_id": "SP470026R9001",
+      "title": "Base Supply Freight and Distribution",
+      "agency": "DLA",
+      "naics": "484121",
+      "set_aside": "SDVOSB",
+      "sins": [],
+      "response_due": "2026-07-20",
+      "posted": "2026-06-15",
+      "description": "Long-haul freight and distribution for a defense supply depot.",
+      "source": "SAM"
+    },
+    {
+      "notice_id": "GS00Q26WOSB0110",
+      "title": "Warehousing and Inventory Management",
+      "agency": "GSA FAS",
+      "naics": "493110",
+      "set_aside": "WOSB",
+      "sins": [],
+      "response_due": "2026-07-25",
+      "posted": "2026-06-16",
+      "description": "Warehousing services with inventory management for federal stock.",
+      "source": "eBuy"
+    },
+    {
+      "notice_id": "47QMCA26R0300",
+      "title": "8(a) Managed Logistics Services",
+      "agency": "GSA",
+      "naics": "488510",
+      "set_aside": "8A",
+      "sins": [],
+      "response_due": "2026-07-30",
+      "posted": "2026-06-17",
+      "description": "8(a) set-aside for freight arrangement and logistics coordination.",
+      "source": "FedConnect"
+    }
+  ]
+}

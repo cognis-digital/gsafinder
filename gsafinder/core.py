@@ -53,7 +53,7 @@ def _read_version() -> str:
                 return v
         except OSError:
             continue
-    return "0.5.2"
+    return "0.6.0"
 
 
 TOOL_VERSION = _read_version()
@@ -95,6 +95,10 @@ class Opportunity:
 
     @classmethod
     def from_dict(cls, d: dict[str, Any]) -> "Opportunity":
+        if not isinstance(d, dict):
+            raise ValueError(
+                f"opportunity record must be a JSON object, got {type(d).__name__}"
+            )
         if not d.get("notice_id"):
             raise ValueError("opportunity record missing 'notice_id'")
         if not d.get("title"):
@@ -126,6 +130,10 @@ class VendorProfile:
 
     @classmethod
     def from_dict(cls, d: dict[str, Any]) -> "VendorProfile":
+        if not isinstance(d, dict):
+            raise ValueError(
+                f"profile must be a JSON object, got {type(d).__name__}"
+            )
         return cls(
             name=str(d.get("name", "vendor")),
             naics=[str(x) for x in (d.get("naics") or [])],
